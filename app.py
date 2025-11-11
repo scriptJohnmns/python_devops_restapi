@@ -4,14 +4,14 @@ from flask_restful import Resource, Api
 app = Flask(__name__)
 api = Api(app)
     
-class Distros(Resource):
+class Homelab(Resource):
     def post(self):
-        return {'message':'Distros Linux'}
+        return {'message':'Bem Vindo ao homelab'}
     
     def get(self, name):
-        return {'Distro':'Name'}
+        return {'message':'Services'}
 
-api.add_resource(Distros, '/distros' , '/distros/<string:name>')
+api.add_resource(Homelab, '/homelab' , '/homelab/<string:name>')
 
 if __name__ == '__main__':
-    app.run(debug=True,host='0.0.0.0')
+    app.run(debug=True, host='0.0.0.0')
